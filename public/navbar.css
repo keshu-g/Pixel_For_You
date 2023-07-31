@@ -1,0 +1,256 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(135, 255, 98);
+    background-image: url("https://wallpaperaccess.com/full/2122645.png");
+    background-repeat: no-repeat; /* Prevent background image repetition */
+    background-size: cover; /* Scale the background image to cover the container */
+    background-position: center; /* Center the background image */
+    background-attachment: fixed; 
+    color: rgb(0, 0, 0);
+} 
+
+
+.topnav {
+    display: flex;
+    margin: 22px 22px 0px 22px;
+    background-color: #000000;
+    overflow: hidden;
+    border-radius: 10px;
+    padding: 12px;
+    left: 0;
+    right: 0;
+    position: fixed;
+    z-index: 10000;
+    top : 0;
+    /* width: 100%; */
+}
+
+/* pixel for you */
+
+.ui-btn {
+    padding-left: 10px;
+    --btn-default-bg: rgb(0, 0, 0);
+    --btn-margin: 10px 20px;
+    --btn-hover-bg: rgb(0, 0, 0);
+    --btn-transition: .3s;
+    --btn-letter-spacing: .1rem;
+    --btn-animation-duration: 1.2s;
+    --btn-shadow-color: rgba(0, 0, 0, 0.137);
+    --btn-shadow: 0 2px 10px 0 var(--btn-shadow-color);
+    --hover-btn-color: #4afa19;
+    --default-btn-color: #fff;
+    --font-size: 17px;
+    /* 👆 this field should not be empty */
+    --font-weight: 600;
+    --font-family: Menlo, Roboto Mono, monospace;
+    /* 👆 this field should not be empty */
+}
+
+/* button settings 👆 */
+
+.ui-btn {
+    box-sizing: border-box;
+    margin: var(--btn-margin);
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    color: var(--default-btn-color);
+    font: var(--font-weight) var(--font-size) var(--font-family);
+    background: var(--btn-default-bg);
+    border: none;
+    cursor: pointer;
+    transition: var(--btn-transition);
+    overflow: hidden;
+    box-shadow: var(--btn-shadow);
+}
+
+.ui-btn span {
+    letter-spacing: var(--btn-letter-spacing);
+    transition: var(--btn-transition);
+    box-sizing: border-box;
+    position: relative;
+    background: inherit;
+}
+
+.ui-btn span::before {
+    box-sizing: border-box;
+    position: absolute;
+    content: "";
+    background: inherit;
+}
+
+.ui-btn:hover,
+.ui-btn:focus {
+    background: var(--btn-hover-bg);
+}
+
+.ui-btn:hover span,
+.ui-btn:focus span {
+    color: var(--hover-btn-color);
+}
+
+.ui-btn:hover span::before,
+.ui-btn:focus span::before {
+    animation: chitchat linear both var(--btn-animation-duration);
+}
+
+@keyframes chitchat {
+    0% {
+        content: "#";
+    }
+
+    5% {
+        content: ".";
+    }
+
+    10% {
+        content: "^{";
+    }
+
+    15% {
+        content: "-!";
+    }
+
+    20% {
+        content: "#$_";
+    }
+
+    25% {
+        content: "№:0";
+    }
+
+    30% {
+        content: "#{+.";
+    }
+
+    35% {
+        content: "@}-?";
+    }
+
+    40% {
+        content: "?{4@%";
+    }
+
+    45% {
+        content: "=.,^!";
+    }
+
+    50% {
+        content: "?2@%";
+    }
+
+    55% {
+        content: "\;1}]";
+    }
+
+    60% {
+        content: "?{%:%";
+        right: 0;
+    }
+
+    65% {
+        content: "|{f[4";
+        right: 0;
+    }
+
+    70% {
+        content: "{4%0%";
+        right: 0;
+    }
+
+    75% {
+        content: "'1_0<";
+        right: 0;
+    }
+
+    80% {
+        content: "{0%";
+        right: 0;
+    }
+
+    85% {
+        content: "]>'";
+        right: 0;
+    }
+
+    90% {
+        content: "4";
+        right: 0;
+    }
+
+    95% {
+        content: "2";
+        right: 0;
+    }
+
+    100% {
+        content: "";
+        right: 0;
+    }
+}
+
+/* Log in */
+.login-btn {
+    /* border: 2px solid rgb(255, 255, 255) !important; */
+    background: #000;
+    box-sizing: border-box;
+    padding: 5px !important;
+    font-size: 15px !important;
+    border-radius: 5px;
+    margin: 7px;
+    
+}
+
+.login-btn:active {
+    z-index: 9999;
+    color: #000;
+    animation: bounce .1s linear;
+}
+
+
+@keyframes bounce {
+    50% {
+        transform: scale(0.9);
+    }
+}
+
+.right-buttons {
+    margin-left: auto;
+    margin-right: 30px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/* home */
+.home{
+    background: #000;
+    margin-top: auto;
+    margin-bottom: auto;
+    border: none;
+    color:#fff;
+    font-family: monospace !important;
+    font-size: 17px;
+    margin-left: 40px;
+    font-weight: bolder;
+
+    box-sizing: border-box;
+    padding: 5px !important;
+    font-size: 15px !important;
+    border-radius: 5px;
+    /* margin: 7px; */
+}
+.home:active {
+    color: initial;
+    z-index: 9999;
+    animation: bounce .1s linear;
+}
+
+a {
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit; /* no underline */
+}

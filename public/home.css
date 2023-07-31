@@ -1,0 +1,58 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#home {
+    margin: auto;
+    margin-top: 100px;
+    width: 70%;
+    font-family: monospace;
+    color: aliceblue;
+}
+.images_list {
+    text-align: left; 
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    /* width: 10%; */
+    overflow: hidden; 
+    padding: 10px;
+    background: rgb(0, 0, 0);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+.username {
+    font-size: 1.2rem;
+    font-weight: bold;
+    /* margin-bottom: 10px; */
+    padding-left: 10px;
+    margin: 10px;
+}
+
+.image-container {
+    text-align: center; /* Centers the image within its container */
+    padding: 10px;
+}
+
+.image {
+    max-height: 90%;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid white;
+    /* box-shadow: 0 2px 4px rgba(255, 255, 255, 0.2); */
+}
+
+.caption {
+    /* font-style: italic; */
+    font-size: larger;
+    margin: 10px;
+    padding-left: 10px;
+    
+}

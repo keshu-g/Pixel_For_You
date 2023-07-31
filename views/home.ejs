@@ -1,0 +1,47 @@
+<%- include('navbar') %>
+    <link rel="stylesheet" href="home.css">
+    <div id="home">
+    </div>
+    <script async>
+        const images_list = document.getElementById('images_list');
+        let images_call = async () => {
+            try {
+                const response = await fetch('/home', {
+                    method: 'POST',
+                    // headers: { 'Content-Type': 'application/json' }
+                });
+                const data = await response.json();
+                if (data) {
+                    showImages(data);
+                }
+                console.log(data); // If the server sends a response, it will be logged here
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+        let showImages = (data) => {
+            const home = document.getElementById('home');
+            data = data.slice().reverse();
+            data.forEach((user) => {
+                const { username, uploads } = user;
+                let upload_rev = uploads.slice().reverse();
+                upload_rev.forEach((upload) => {
+                    const { caption, image64 } = upload;
+
+                    let html_data = `
+                    <div class="images_list">
+                        <div class="username">${username}</div>
+                        <div class="image-container">
+                            <img src="${image64}" alt="" class="image" />
+                        </div>
+                        <div class="caption">${caption}</div>
+                    </div>`
+                    home.innerHTML += html_data
+                });
+            });
+        }
+
+
+        images_call();
+    </script>
+    <%- include('footer') %>

@@ -1,0 +1,48 @@
+<%- include('navbar') -%>
+    <link rel="stylesheet" href="signup.css">
+    <form class="form">
+        <p class="heading">Log in</p>
+        <input placeholder="Username" class="input" type="text" name="username">
+        <div class="username error"></div>
+        <input placeholder="Password" class="input" type="password" name="password">
+        <div class="password error"></div>
+        <button class="btn">Submit</button>
+    </form>
+
+    <script>
+        const form = document.querySelector('form');
+        const usernameError = document.querySelector('.username')
+        const passwordError = document.querySelector('.password')
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            // reset errors
+            usernameError.textContent = ''
+            passwordError.textContent = ''
+
+            const username = form.username.value;
+            const password = form.password.value;
+            // console.log(username, password);
+
+            try {
+                const result = await fetch('/login', {
+                    method: 'POST',
+                    body: JSON.stringify({ username, password }),
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                const data = await result.json()
+                console.log(data);
+                if (data.error2) {
+                    usernameError.innerHTML = data.error2.username
+                    passwordError.innerHTML = data.error2.password
+                }
+                if (data.user) (
+                    location.assign('/')
+                )
+            } catch (error) {
+                console.log(error)
+            }
+        });
+    </script>
+
+<%- include('footer') -%>

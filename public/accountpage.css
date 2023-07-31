@@ -1,0 +1,115 @@
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px rgb(0, 0, 0) inset !important;
+}
+input:-webkit-autofill{
+    -webkit-text-fill-color: #ffcc00 !important;
+}
+
+.profile {
+    text-align: center;
+    background: rgb(0, 0, 0);
+    margin: 120px 25px 24px 24px;
+    border-radius: 10px;
+    padding: 50px;
+    font-family: Press Start 2P;
+    color: aliceblue;
+}
+
+.profile-name {
+    font-size: 50px;
+}
+
+body {
+    font-family: monospace;
+    background-color: #1a1a1a;
+    /* margin: 0; */
+    /* padding: 0; */
+}
+
+.form-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #000;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+
+label {
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px #000;
+}
+
+input[type="text"]::placeholder {
+    background-color: #000;
+}
+
+input[type="file"],
+input[type="text"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    border: 2px solid #f0efea;
+    border-radius: 5px;
+    background-color: #000;
+    font-size: 1rem;
+    font-family: 'Press Start 2P', cursive;
+    outline: none;
+    color: #ffcc00;
+    caret-color: #ffcc00;
+    transition: background-color 0.3s ease-in-out;
+}
+
+input[type="file"]::file-selector-button,
+input[type="text"]::file-selector-button {
+    display: none;
+}
+
+input[type="file"]:focus,
+input[type="text"]:focus {
+    border-color: #ffcc00;
+    box-shadow: 0 0 3px #ffcc00;
+}
+
+input[type="file"]:hover,
+input[type="text"]:hover {
+    border-color: #ffcc00;
+    box-shadow: 0 0 3px #ffcc00;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: 'Press Start 2P', cursive;
+    outline: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #ffffff;
+}
+
+.error {
+    color: red;
+    padding-bottom: 10px;
+}

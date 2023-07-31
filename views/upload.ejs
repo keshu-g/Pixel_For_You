@@ -1,0 +1,79 @@
+<%- include('navbar') %>
+    <link rel="stylesheet" href="accountpage.css">
+    <div class="profile">
+        <span class="profile-name">
+            <%= user.username %>
+        </span>
+    </div>
+    <div class="form-container">
+        <form enctype="multipart/form-data">
+            <label for="image">Choose an image:</label>
+            <input type="file" id="image" name="image" accept="image/*">
+            <div class="image_error error"></div>
+            <input type="text" name="caption" placeholder="Caption">
+            <div class="caption_error error"></div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        const imgtobase64 = (file) => {
+            return new Promise((resolve, reject) => {
+                const fileReader = new FileReader();
+                fileReader.readAsDataURL(file)
+                fileReader.onload = () => {
+                    resolve(fileReader.result)
+                };
+                fileReader.onerror = (error) => { reject(error); };
+            })
+        }
+        const form = document.querySelector('form')
+        const imageError = document.querySelector('.image_error');
+        const captionError = document.querySelector('.caption_error');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const image = form.image.files[0];
+            const caption = form.caption.value.trim();
+            
+            imageError.textContent = '';
+            captionError.textContent = '';
+
+            // Validate the image input
+           
+            if (!image) {
+                imageError.textContent = 'Please choose an image.';
+                return;
+            }
+            
+            // Check if the selected file is an image
+            if (!image.type.startsWith('image/')) {
+                imageError.textContent = 'Invalid image format. Please choose an image.';
+                return;
+            }
+            
+            // Validate the caption input
+      
+            if (!caption) {
+                captionError.textContent = 'Please enter a caption.';
+                return;
+            }
+
+
+            const image64 = await imgtobase64(image);
+            console.log("Image Uploaded with caption : ", caption);
+            try {
+                const response = await fetch('/upload', {
+                    method: 'POST',
+                    body: JSON.stringify({ image64, caption }),
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                // const data = await response.json();
+                // console.log(data);
+                location.assign('/') // If the server sends a response, it will be logged here
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+
+    </script>
+    <%- include('footer') %>

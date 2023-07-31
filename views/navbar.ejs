@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="navbar.css">
+</head>
+
+<body>
+    <div class="topnav">
+        <button class="ui-btn">
+            <span>
+                <a href="/">Pixel for you</a>
+            </span>
+        </button>
+        <button class="home">
+            <span>
+                <a href="/home">Home</a>
+            </span>
+        </button>
+        <div class="right-buttons">
+            <% if (locals.user) { %>
+
+                <button class="home">
+                    <span>
+                        <a href="/logout">Log Out</a>
+                    </span>
+                </button>
+                <button class="home">
+                    <span>
+                        <a href="/upload">Account <%= user.username %></a>
+                    </span>
+                </button>
+                <% } else { %>
+                    <button class="home">
+                        <span>
+                            <a href="/login">Log in</a>
+                        </span>
+                    </button>
+                    <button class="home">
+                        <span>
+                            <a href="/signup">Join</a>
+                        </span>
+                    </button>
+                    <% } %>
+
+        </div>
+    </div>
