@@ -24,7 +24,7 @@ mongoose.connect(dbURI).then((results) => app.listen(3000)).catch((err) => conso
 app.get('*', checkUser);
 app.get('/', (req, res) => {
     res.json({message:"hello keshu here"})
-    res.render('home');
+    // res.render('home');
 });
 
 app.get('/home', (req, res) => {
