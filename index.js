@@ -27,11 +27,11 @@ app.get('/', (req, res) => {
     // res.render('home');
 });
 
-app.get('/home', (req, res) => {
-    res.render('home');
-});
+// app.get('/home', (req, res) => {
+//     res.render('home');
+// });
 
-app.post('/home', async (req, res) => {
+app.get('/home', async (req, res) => {
     let images = await User.find(
         {
             "uploads.caption":
