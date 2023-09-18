@@ -17,7 +17,7 @@ app.use(cookieParser());
 // app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-const dbURI = 'mongodb+srv://spikeisgreen:spike420@firstpixel.4abuxdp.mongodb.net/UserData'
+const dbURI = 'DataBaseURL'
 mongoose.connect(dbURI).then((results) => app.listen(3000)).catch((err) => console.log(err))
 
 
